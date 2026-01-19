@@ -50,35 +50,9 @@
           </div>
           <!-- 遮罩层 -->
           <div class="backdrop"></div>
-<!--          <img src="{% static 'images/bg1.jpg' %}" alt="">-->
           <img src="media/{{ slide.image }}" alt="">
         </div>
         {% endfor %}
-<!--        <div class="glide__slide">-->
-<!--          <div class="slide-caption">-->
-<!--            <h1>十年高端网站设计经验，用创新点缀人生，让科技融入理想。</h1>-->
-<!--            <h3>-->
-<!--              科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想-->
-<!--            </h3>-->
-<!--            <button class="explore-btn">探索更多</button>-->
-<!--          </div>-->
-<!--          &lt;!&ndash; 遮罩层 &ndash;&gt;-->
-<!--          <div class="backdrop"></div>-->
-<!--          <img src="{% static 'images/bg.jpg' %}" alt="">-->
-<!--        </div>-->
-        <!-- 第二张轮播 -->
-<!--        <div class="glide__slide">-->
-<!--          <div class="slide-caption left">-->
-<!--            <h1>科技改变世界</h1>-->
-<!--            <h3>-->
-<!--              立足科学发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支持。凝聚科技创意，成就创新梦想。-->
-<!--            </h3>-->
-<!--            <button class="explore-btn">探索更多</button>-->
-<!--          </div>-->
-<!--          &lt;!&ndash; 遮罩层 &ndash;&gt;-->
-<!--          <div class="backdrop"></div>-->
-<!--          <img src="{% static 'images/15.jpg' %}" alt="">-->
-<!--        </div>-->
       </div>
     </div>
     <!-- 切换按钮 -->
@@ -235,12 +209,13 @@
     <section id="team-intro" class="team-intro section-bg">
       <h2 class="title1">团队介绍</h2>
       <div class="team-members">
+        {% for member in team %}
         <div class="team-member">
           <div class="profile-image">
-            <img src="{% static 'images/01.jpeg' %}" alt="">
+            <img src="media/{{ member.avatar }}" alt="">
           </div>
-          <h4 class="name">Jack</h4>
-          <p class="position">前端工程师</p>
+          <h4 class="name">{{ member.name }}</h4>
+          <p class="position">{{ member.title }}</p>
           <ul class="social-links">
             <li><i class="fa fa-weixin"></i></li>
             <li><i class="fa fa-weibo"></i></li>
@@ -248,45 +223,7 @@
             <li><i class="fa fa-linkedin-square "></i></li>
           </ul>
         </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/02.jpeg' %}" alt="">
-          </div>
-          <h4 class="name">George</h4>
-          <p class="position">后端工程师</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square"></i></li>
-          </ul>
-        </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/04.jpeg' %}" alt="">
-          </div>
-          <h4 class="name">John</h4>
-          <p class="position">UI设计师</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square "></i></li>
-          </ul>
-        </div>
-        <div class="team-member">
-          <div class="profile-image">
-            <img src="{% static 'images/03.jpeg' %}" alt="">
-          </div>
-          <h4 class="name">David</h4>
-          <p class="position">项目架构师</p>
-          <ul class="social-links">
-            <li><i class="fa fa-weixin"></i></li>
-            <li><i class="fa fa-weibo"></i></li>
-            <li><i class="fa fa-github"></i></li>
-            <li><i class="fa fa-linkedin-square "></i></li>
-          </ul>
-        </div>
+        {% endfor %}
       </div>
     </section>
 
