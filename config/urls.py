@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from mysite.views import hello
+from mysite.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', hello),
+    # 注意，这里把 route 参数设置为空字符串，这样，当访问 / 时，就会调用 index 函数
+    path('', index),
 ]
