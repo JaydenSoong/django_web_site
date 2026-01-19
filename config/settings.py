@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'slide',
+    'news',
+    'mysite',
+    'team',
 ]
 
 MIDDLEWARE = [
@@ -122,3 +126,7 @@ USE_TZ = False
 STATIC_URL = 'static/'
 # 配置静态文件目录
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+# 配置媒体文件目录
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

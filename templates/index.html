@@ -40,44 +40,45 @@
   <div id="home" class="glide">
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
+        {% for slide in slides %}
         <!-- 第一张轮播图 -->
         <div class="glide__slide">
           <div class="slide-caption">
-            <h1>十年高端网站设计经验，用创新点缀人生，让科技融入理想。</h1>
-            <h3>
-              科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想
-            </h3>
+            <h1>{{ slide.title }}</h1>
+            <h3>{{ slide.content}}</h3>
             <button class="explore-btn">探索更多</button>
           </div>
           <!-- 遮罩层 -->
           <div class="backdrop"></div>
-          <img src="{% static 'images/bg1.jpg' %}" alt="">
+<!--          <img src="{% static 'images/bg1.jpg' %}" alt="">-->
+          <img src="media/{{ slide.image }}" alt="">
         </div>
-        <div class="glide__slide">
-          <div class="slide-caption">
-            <h1>十年高端网站设计经验，用创新点缀人生，让科技融入理想。</h1>
-            <h3>
-              科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想
-            </h3>
-            <button class="explore-btn">探索更多</button>
-          </div>
-          <!-- 遮罩层 -->
-          <div class="backdrop"></div>
-          <img src="{% static 'images/bg.jpg' %}" alt="">
-        </div>
+        {% endfor %}
+<!--        <div class="glide__slide">-->
+<!--          <div class="slide-caption">-->
+<!--            <h1>十年高端网站设计经验，用创新点缀人生，让科技融入理想。</h1>-->
+<!--            <h3>-->
+<!--              科技创新大平台，智慧生活新引擎。依靠科技进步推进经济跨越式发展。用创新点缀人生，让科技融入理想-->
+<!--            </h3>-->
+<!--            <button class="explore-btn">探索更多</button>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; 遮罩层 &ndash;&gt;-->
+<!--          <div class="backdrop"></div>-->
+<!--          <img src="{% static 'images/bg.jpg' %}" alt="">-->
+<!--        </div>-->
         <!-- 第二张轮播 -->
-        <div class="glide__slide">
-          <div class="slide-caption left">
-            <h1>科技改变世界</h1>
-            <h3>
-              立足科学发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支持。凝聚科技创意，成就创新梦想。
-            </h3>
-            <button class="explore-btn">探索更多</button>
-          </div>
-          <!-- 遮罩层 -->
-          <div class="backdrop"></div>
-          <img src="{% static 'images/15.jpg' %}" alt="">
-        </div>
+<!--        <div class="glide__slide">-->
+<!--          <div class="slide-caption left">-->
+<!--            <h1>科技改变世界</h1>-->
+<!--            <h3>-->
+<!--              立足科学发展，着力自主创新。加速科技进步，为全市经济社会发展提供有力支持。凝聚科技创意，成就创新梦想。-->
+<!--            </h3>-->
+<!--            <button class="explore-btn">探索更多</button>-->
+<!--          </div>-->
+<!--          &lt;!&ndash; 遮罩层 &ndash;&gt;-->
+<!--          <div class="backdrop"></div>-->
+<!--          <img src="{% static 'images/15.jpg' %}" alt="">-->
+<!--        </div>-->
       </div>
     </div>
     <!-- 切换按钮 -->
