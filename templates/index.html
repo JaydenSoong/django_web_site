@@ -120,36 +120,17 @@
       <!-- 筛选按钮 -->
       <div class="filter-btns">
         <button class="filter-btn active" data-filter="*">全部</button>
-        <button class="filter-btn" data-filter=".web">企业集团</button>
-        <button class="filter-btn" data-filter=".mobile">移动金融</button>
-        <button class="filter-btn" data-filter=".science">设计建筑</button>
+        <button class="filter-btn" data-filter=".category_2">企业集团</button>
+        <button class="filter-btn" data-filter=".category_3">移动金融</button>
+        <button class="filter-btn" data-filter=".category_4">设计建筑</button>
       </div>
       <!-- 筛选图片 -->
       <div class="cases">
-        <div class="case-item web science">
-          <img src="{% static 'images/11.jpg' %}" alt="">
+        {% for case in cases %}
+        <div class="case-item category_{{ case.category.id }}">
+          <img src="media/{{ case.image }}" alt="">
         </div>
-        <div class="case-item web">
-          <img src="{% static 'images/12.jpg' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/13.jpg' %}" alt="">
-        </div>
-        <div class="case-item web mobile">
-          <img src="{% static 'images/14.jpg' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/15.jpg' %}" alt="">
-        </div>
-        <div class="case-item web science">
-          <img src="{% static 'images/16.jpg' %}" alt="">
-        </div>
-        <div class="case-item science web mobile">
-          <img src="{% static 'images/17.jpg' %}" alt="">
-        </div>
-        <div class="case-item mobile science">
-          <img src="{% static 'images/18.jpg' %}" alt="">
-        </div>
+        {% endfor %}
       </div>
     </section>
 
@@ -268,8 +249,11 @@
             <p class="comments"><i class="fa fa-comments"></i> {{ news.comment_count }} 条评论</p>
           </div>
           <h2 class="act-title">{{ news.title }}</h2>
-          <article>{{ news.content | truncatechars:150}}</article>
+          <article>{{ news.content | slice:'50'}}</article>
+          <a href="/news/{{ news.id }}">
+
           <button class="readmore-btn">阅读更多</button>
+            </a>
         </div>
         {% endfor %}
       </div>

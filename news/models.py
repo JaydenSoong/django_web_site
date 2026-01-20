@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Category(models.Model):
@@ -15,7 +16,9 @@ class Category(models.Model):
 
 class News(models.Model):
     title = models.CharField('标题', max_length=100)
-    content = models.TextField('内容')
+    # 使用带图片上传的富文本编辑器 ckeditor
+    # content = models.TextField('内容')
+    content = RichTextUploadingField('内容')
     image = models.ImageField('新闻图片', upload_to='news/', blank=True, null=True, help_text='最佳尺寸：1280*853')
     comment_count = models.IntegerField('评论数', default=0)
     publish_time = models.DateTimeField('发布时间', auto_now_add=True, editable=True)

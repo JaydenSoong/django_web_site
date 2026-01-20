@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # 注意，这里把 route 参数设置为空字符串，这样，当访问 / 时，就会调用 index 函数
     path('', index),
-    path('news/', include('news.urls'))
+    path('news/', include('news.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

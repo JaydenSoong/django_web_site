@@ -8,7 +8,7 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
 
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'content', 'category', 'publish_time',)
+    list_display = ('id', 'title', 'category', 'publish_time', 'update_time')
     list_display_links = ('title',)
     readonly_fields = ('id',)
 

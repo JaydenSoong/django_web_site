@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'news',
     'mysite',
     'team',
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 # 配置媒体文件目录
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 配置CKEditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
