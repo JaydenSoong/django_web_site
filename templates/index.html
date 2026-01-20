@@ -256,50 +256,22 @@
       <h2 class="title1">资讯中心</h2>
       <p class="intro">关注公司动态，获取一手信息</p>
       <div class="activities">
+        {% for news in news_list %}
         <div class="activity">
           <div class="act-image-wrapper">
-            <img src="{% static 'images/21.png' %}" alt="">
+            <img src="media/{{ news.image }}" alt="">
           </div>
           <div class="meta">
             <p class="date-published">
-              <i class="fa fa-calendar"></i> 2020年3月5日
+              <i class="fa fa-calendar"></i> {{ news.publish_time | date:"Y年m月d日"}}
             </p>
-            <p class="comments"><i class="fa fa-comments"></i> 29条评论</p>
+            <p class="comments"><i class="fa fa-comments"></i> {{ news.comment_count }} 条评论</p>
           </div>
-          <h2 class="act-title">什么是伪静态？伪静态有</h2>
-          <article>伪静态是相对真实静态来讲的，真实静态会生成一个html或htm后缀的文件，访客能够访问到真实存在的静态页面，而伪静态则没有生成实体静态页面文件，而仅仅是以.html一类的静态页面...</article>
+          <h2 class="act-title">{{ news.title }}</h2>
+          <article>{{ news.content | truncatechars:150}}</article>
           <button class="readmore-btn">阅读更多</button>
         </div>
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'images/22.png' %}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2020年2月18日
-            </p>
-            <p class="comments"><i class="fa fa-comments"></i> 65条评论</p>
-          </div>
-          <h2 class="act-title">SEO网站的基本术语</h2>
-          <article>
-            SEO SEO就是Search Engine Optimization的缩写,中文就是搜索引擎优化。 PR 值全称为PageRank(网页级别）,是Google用于用来标识网页的等级、重要性的一种方法，是Google用来衡量一个网站的好坏的重...
-            </article>
-          <button class="readmore-btn">阅读更多</button>
-        </div>
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'images/23.png' %}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2020年2月8日
-            </p>
-            <p class="comments"><i class="fa fa-comments"></i> 45条评论</p>
-          </div>
-          <h2 class="act-title">网站建设中常见的五大问题</h2>
-          <article>网站建设过程中会遇到许多问题，南京网站制作和您分享一些关于网站设计过程中常见的问题。 1、链接都应该可以打开 有的时候用户打开一个链接页面会显示404，这是链接所指向的页...</article>
-          <button class="readmore-btn">阅读更多</button>
-        </div>
+        {% endfor %}
       </div>
     </section>
   </div>

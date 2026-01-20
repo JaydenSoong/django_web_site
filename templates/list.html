@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻列表</title>
+</head>
+<body>
+    <h1>新闻列表</h1>
+    <ul>
+        {% for news in news_list %}
+        <li><a href="/news/{{ news.id }}">{{ news.title }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
